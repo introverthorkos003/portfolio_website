@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+    <category>analysis</category>
+        <title>Ranjit Pandey - Cybersecurity Blog</title>
+        <link>https://pandeyranjit.com.np/blog/</link>
+        <description>Monthly cybersecurity insights, tutorials, and analysis</description>
+        <language>en-us</language>
+        <atom:link href="https://pandeyranjit.com.np/blog/rss.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Wed, 31 Dec 2025 10:00:00 +0000</lastBuildDate>
+        
+        <item>
+            <title>Cloudflare's Massive DDoS Attack: Technical Breakdown &amp; Lessons Learned</title>
+            <link>https://pandeyranjit.com.np/blog/2025/01-cloudflare-ddos/</link>
+            <description>In-depth technical analysis of Cloudflare's 3.47 Tbps DDoS attack, covering attack vectors, mitigation strategies, and security lessons for professionals.</description>
+            <pubDate>Wed,  31 Dec 2025 08:00:00 +0000</pubDate>
+            <guid>https://pandeyranjit.com.np/blog/2025/01-cloudflare-ddos/</guid>
+            <category>Threat Analysis</category>
+            <category>Network Security</category>
+        </item>
+        <item>
+            <category>Programming</category>
+            <title>Why C Should Be Your First Programming Language for Cybersecurity</title>
+            <link>https://pandeyranjit.com.np/blog/2025/02-c-first-language/</link>
+            <description>Learn why starting with C programming gives you fundamental memory management skills and security understanding essential for cybersecurity careers.</description>
+            <pubDate>Sat,  31 Dec 2025 08:00:00 +0000</pubDate>
+            <guid>https://pandeyranjit.com.np/blog/2025/02-c-first-language/</guid>
+        </item>
+        
+    </channel>
+</rss>

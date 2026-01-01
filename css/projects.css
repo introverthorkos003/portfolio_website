@@ -1,0 +1,285 @@
+        /* Additional styles for projects page */
+        .project-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            background: var(--bg-light);
+            border: 2px solid var(--border-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .project-detail {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-status {
+            background: var(--success-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .project-status.completed {
+            background: var(--success-color);
+        }
+        
+        .project-status.in-progress {
+            background: var(--warning-color);
+        }
+        
+        .project-status.planned {
+            background: var(--text-light);
+        }
+        
+        .project-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-item {
+            background: var(--bg-light);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .tech-item i {
+            color: var(--primary-color);
+        }
+        
+        .project-features {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin: 1.5rem 0;
+        }
+        
+        .project-features h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .project-features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .project-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .project-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .project-features li i {
+            color: var(--success-color);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .project-screenshot {
+            margin: 2rem 0;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .project-screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .screenshot-placeholder {
+            background: var(--bg-light);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+        }
+        
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .meta-item {
+            text-align: center;
+        }
+        
+        .meta-value {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .meta-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-light);
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--border-color);
+        }
+        
+        .coming-soon {
+            opacity: 0.7;
+        }
+        
+        /* Cyber theme adjustments */
+        body[data-theme="cyber"] .project-detail {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+        }
+        
+        body[data-theme="cyber"] .project-features {
+            background: rgba(0, 255, 65, 0.05);
+            border: 1px solid var(--border-color);
+        }
+        
+        body[data-theme="cyber"] .tech-item {
+            background: rgba(0, 255, 65, 0.1);
+            border: 1px solid var(--primary-color);
+        }
+        /*DARK MODE FIXES FOR PROJECT FILTERING */
+
+html[data-theme="cyber"] .project-categories {
+    background: transparent;
+    border: none;
+}
+
+html[data-theme="cyber"] .category-btn {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+html[data-theme="cyber"] .category-btn:hover {
+    background: var(--bg-light);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+html[data-theme="cyber"] .category-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+}
+
+/* Fix for project cards in dark mode */
+html[data-theme="cyber"] .project-detail {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+html[data-theme="cyber"] .project-detail[style*="display: none"] {
+    display: none !important;
+}
+
+html[data-theme="cyber"] .project-detail[style*="opacity"] {
+    opacity: 1 !important;
+}
+
+/* Fix project titles and text */
+html[data-theme="cyber"] .project-title,
+html[data-theme="cyber"] .project-subtitle,
+html[data-theme="cyber"] .project-description,
+html[data-theme="cyber"] .project-features h4,
+html[data-theme="cyber"] .project-features li {
+    color: var(--text-color) !important;
+}
+
+/* Fix tech tags */
+html[data-theme="cyber"] .tech-tag,
+html[data-theme="cyber"] .tech-item {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Fix project meta */
+html[data-theme="cyber"] .meta-value {
+    color: var(--primary-color);
+}
+
+html[data-theme="cyber"] .meta-label {
+    color: var(--text-light);
+}
+
+/* Ensure project cards are visible when filtered */
+html[data-theme="cyber"] .project-detail[data-categories] {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Fix section title */
+html[data-theme="cyber"] .section-title {
+    color: var(--text-color);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

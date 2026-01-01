@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="js-loading">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudflare DDoS Attack Analysis | Ranjit Pandey</title>
+    <meta name="description"
+        content="Technical analysis of Cloudflare's 3.47 Tbps DDoS attack, mitigation strategies, and security lessons for professionals">
+
+    <!-- SEO -->
+    <meta property="og:title" content="Cloudflare's Massive DDoS Attack: Technical Breakdown">
+    <meta property="og:description" content="In-depth analysis of the 2025 Cloudflare DDoS attack at 3.47 Tbps">
+    <meta property="og:image" content="/blogs/2025/01-cloudflare-ddos/images/ddos-attack.png">
+    <meta property="og:url" content="https://pandeyranjit.com.np/blogs/2025/01-cloudflare-ddos/">
+    <meta property="article:published_time" content="2025-12-28">
+    <meta property="article:author" content="Ranjit Pandey">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Cloudflare DDoS Attack: 3.47 Tbps Technical Breakdown",
+        "description": "Technical analysis of Cloudflare's massive DDoS attack, mitigation strategies, and security lessons",
+        "author": {
+            "@type": "Person",
+            "name": "Ranjit Pandey",
+            "url": "https://pandeyranjit.com.np"
+        },
+        "datePublished": "2025-12-31",
+        "dateModified": "2025-12-31",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Ranjit Pandey Cybersecurity blogs",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pandeyranjit.com.np/images/favicon-32x32.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pandeyranjit.com.np/blogs/2025/01-cloudflare-ddos/"
+        }
+    }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/theme-switcher.css">
+    <link rel="stylesheet" href="/css/blog-cloudflare-ddos.css">
+    <link rel="stylesheet" href="/css/blogs.css">
+    <link rel="stylesheet" id="cyberThemeCSS" href="/css/cyber-theme.css" disabled>
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico">
+</head>
+
+<body class="theme">
+    <!-- Terminal Theme Switcher -->
+    <div id="themeTerminal" class="theme-terminal" aria-hidden="true">
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <span class="terminal-icon"><i class="fas fa-terminal"></i></span>
+                <span>theme_selector.sh</span>
+            </div>
+            <div class="terminal-controls">
+                <button class="terminal-close"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="terminal-body">
+            <div class="terminal-content">
+                <div class="terminal-line">
+                    <span class="prompt">kali@lykos:~$</span> <span class="command">help</span>
+                </div>
+                <div class="terminal-output">
+                    <p>Type "whoami" for cyber theme</p>
+                </div>
+                <div class="terminal-line current-line">
+                    <span class="prompt">kali@lykos:~$</span>
+                    <input type="text" class="terminal-input" id="terminalInput">
+                    <span class="cursor">█</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="themeToggle" class="theme-toggle-btn">
+        <i class="fas fa-terminal"></i>
+        <span class="btn-text">$ whoami</span>
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">
+                    <img src="/images/favicon-32x32.png" alt="Logo" class="logo-icon">
+                    <span class="logo-text">Ranjit Pandey</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li><a href="/projects/" class="nav-link">Projects</a></li>
+                    <li><a href="/blogs/" class="nav-link">blogs</a></li>
+                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+                    <li>
+                        <button class="nav-action-btn" id="navThemeToggle">
+                            <i class="fas fa-moon"></i>
+                            <span>Dark Mode</span>
+                        </button>
+                    </li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- blogs Post Content -->
+    <main class="main-content">
+        <article class="blogs-post">
+            <div class="container">
+                <!-- Post Header -->
+                <header class="post-header">
+                    <nav class="breadcrumb">
+                        <a href="/">Home</a> /
+                        <a href="/blogs/">blogs</a> /
+                        <span class="current">Cloudflare DDoS Analysis</span>
+                    </nav>
+
+                    <div class="post-category threat-analysis">Threat Analysis</div>
+                    <h1 class="post-title">Cloudflare's Massive DDoS Attack: Technical Breakdown & Lessons Learned</h1>
+
+                    <div class="post-meta">
+                        <div class="author">
+                            <img src="/images/profile.png" alt="Ranjit Pandey" class="author-avatar">
+                            <div>
+                                <span class="author-name">Ranjit Pandey</span>
+                                <span class="author-title">Security Researcher</span>
+                            </div>
+                        </div>
+                        <div class="meta-details">
+                            <span class="date"><i class="far fa-calendar"></i> Dec 31, 2025</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                            <span class="difficulty intermediate">Intermediate Level</span>
+                        </div>
+                    </div>
+
+                    <div class="post-actions">
+                        <button class="share-btn" data-platform="stack-overflow">
+                            <i class="fab fa-stack-overflow"></i> stack-overflow
+                        </button>
+                        <button class="share-btn" data-platform="linkedin">
+                            <i class="fab fa-linkedin"></i> Share
+                        </button>
+                        <button class="share-btn" id="copyLinkBtn">
+                            <i class="fas fa-link"></i> Copy Link
+                        </button>
+                    </div>
+                </header>
+
+                <!-- DDoS Attack Visualization -->
+                <div class="attack-visualization">
+
+                    <!-- Target Server -->
+                    <div class="attack-server">
+                        <i class="fas fa-server"></i>
+                    </div>
+
+                    <!-- Bot Nodes -->
+                    <div class="bot-node" style="top:10%; left:20%;"></div>
+                    <div class="bot-node" style="top:20%; left:70%;"></div>
+                    <div class="bot-node" style="top:40%; left:10%;"></div>
+                    <div class="bot-node" style="top:60%; left:80%;"></div>
+                    <div class="bot-node" style="top:80%; left:30%;"></div>
+                    <div class="bot-node" style="top:25%; left:50%;"></div>
+
+                    <!-- Attack Traffic Lines -->
+                    <div class="attack-traffic" style="bottom:50%; left:20%; transform: rotate(35deg);"></div>
+                    <div class="attack-traffic" style="bottom:50%; left:70%; transform: rotate(-30deg);"></div>
+                    <div class="attack-traffic" style="bottom:50%; left:10%; transform: rotate(50deg);"></div>
+                    <div class="attack-traffic" style="bottom:50%; left:80%; transform: rotate(-45deg);"></div>
+                    <div class="attack-traffic" style="bottom:50%; left:30%; transform: rotate(15deg);"></div>
+
+                </div>
+                <!-- Post Content -->
+                <div class="post-content">
+                    <!-- Executive Summary -->
+                    <div class="executive-summary">
+                        <h3><i class="fas fa-bullseye"></i> Executive Summary</h3>
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <span class="summary-label">Attack Size</span>
+                                <span class="summary-value highlight">3.47 Tbps</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Duration</span>
+                                <span class="summary-value">15 minutes</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Vectors</span>
+                                <span class="summary-value">Multi-vector</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Mitigation</span>
+                                <span class="summary-value success">Successful</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Introduction -->
+                    <section class="post-section">
+                        <h2><i class="fas fa-fire"></i> Introduction</h2>
+                        <p>On January 10, 2025, Cloudflare mitigated one of the largest Distributed Denial of Service
+                            (DDoS) attacks ever recorded, peaking at <strong>3.47 terabits per second (Tbps)</strong>.
+                            As a cybersecurity enthusiast, I found this incident particularly fascinating due to its
+                            scale and the sophisticated mitigation techniques employed.</p>
+
+                        <div class="alert info">
+                            <i class="fas fa-info-circle"></i>
+                            <strong>Note:</strong> This analysis is based on publicly available information from
+                            Cloudflare's blogs post and my own research into DDoS mitigation strategies.
+                        </div>
+                    </section>
+
+                    <!-- Technical Breakdown -->
+                    <section class="post-section">
+                        <h2><i class="fas fa-code"></i> Technical Breakdown</h2>
+
+                        <h3>Attack Characteristics</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Attack Details</span>
+                                <button class="copy-code"><i class="far fa-copy"></i></button>
+                            </div>
+                            <pre><code class="language-json">{
+    "attack_timestamp": "2025-01-10 T:14:30:00Z",
+    "peak_traffic": "3.47 Tbps",
+    "duration": "15 minutes",
+    "packet_rate": "~200 million packets/second",
+    "source_ips": "~15,000 unique IPs",
+    "target": "Financial services customer",
+    "vectors": ["UDP amplification", "HTTP/2 rapid reset", "TCP SYN flood"]
+}</code></pre>
+                        </div>
+
+                        <h3>Attack Vectors Analysis</h3>
+
+                        <div class="attack-vector">
+                            <h4>1. UDP Amplification Attacks</h4>
+                            <p>Attackers exploited vulnerable DNS, NTP, and SNMP servers to generate massive traffic:
+                            </p>
+                            <pre><code class="language-bash"># Example of DNS amplification attack
+dig ANY isc.org @open.resolver +edns=0 +bufsize=4096 +time=2</code></pre>
+                            <p><strong>Amplification Factor:</strong> 50-100x</p>
+                        </div>
+
+                        <div class="attack-vector">
+                            <h4>2. HTTP/2 Rapid Reset Exploit</h4>
+                            <p>This relatively new technique abuses HTTP/2 protocol features:</p>
+                            <pre><code class="language-python"># Simplified HTTP/2 attack simulation
+import h2.connection
+import h2.config
+
+# Attackers rapidly open and close streams
+# without waiting for responses
+# This overwhelms server resources</code></pre>
+                        </div>
+                    </section>
+
+                    <!-- Mitigation Strategies -->
+                    <section class="post-section">
+                        <h2><i class="fas fa-shield-alt"></i> Mitigation Strategies Used</h2>
+
+                        <div class="mitigation-grid">
+                            <div class="mitigation-card">
+                                <div class="mitigation-icon">
+                                    <i class="fas fa-filter"></i>
+                                </div>
+                                <h4>1. Anycast Network</h4>
+                                <p>Cloudflare's global Anycast network distributed the attack across 300+ data centers,
+                                    diluting its impact.</p>
+                            </div>
+
+                            <div class="mitigation-card">
+                                <div class="mitigation-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h4>2. Machine Learning Detection</h4>
+                                <p>AI models automatically detected anomalous patterns within seconds, triggering
+                                    mitigation rules.</p>
+                            </div>
+
+                            <div class="mitigation-card">
+                                <div class="mitigation-icon">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <h4>3. BGP Flowspec</h4>
+                                <p>Used BGP Flow Specification to push filtering rules to edge routers in real-time.</p>
+                            </div>
+                        </div>
+
+                        <h3>Mitigation Timeline</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-time">T+0s</div>
+                                <div class="timeline-content">
+                                    <h4>Attack Detection</h4>
+                                    <p>Anomaly detection systems trigger alerts</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-time">T+3s</div>
+                                <div class="timeline-content">
+                                    <h4>Automatic Mitigation</h4>
+                                    <p>ML models deploy initial filtering rules</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-time">T+30s</div>
+                                <div class="timeline-content">
+                                    <h4>Full Mitigation</h4>
+                                    <p>Attack completely mitigated, normal traffic resumes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Security Lessons -->
+                    <section class="post-section">
+                        <h2><i class="fas fa-graduation-cap"></i> Security Lessons</h2>
+
+                        <div class="lessons">
+                            <div class="lesson-card important">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Lesson 1: Defense in Depth</h4>
+                                <p>No single solution can stop sophisticated DDoS attacks. Implement multiple layers of
+                                    protection.</p>
+                            </div>
+
+                            <div class="lesson-card">
+                                <h4><i class="fas fa-chart-line"></i> Lesson 2: Real-time Monitoring</h4>
+                                <p>Continuous traffic analysis is crucial for early detection. Set up alerts for unusual
+                                    patterns.</p>
+                            </div>
+
+                            <div class="lesson-card">
+                                <h4><i class="fas fa-network-wired"></i> Lesson 3: Geographic Distribution</h4>
+                                <p>Distribute your infrastructure globally to dilute attack impact.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Practical Exercise -->
+                    <section class="post-section exercise">
+                        <h2><i class="fas fa-laptop-code"></i> Hands-on Exercise</h2>
+                        <p>Try this simple DDoS detection script to understand the basics:</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Python - Basic DDoS Detection</span>
+                                <button class="copy-code"><i class="far fa-copy"></i></button>
+                            </div>
+                            <pre><code class="language-python">#!/usr/bin/env python3
+"""
+Simple DDoS detection script
+Monitors network traffic for suspicious patterns
+"""
+
+import psutil
+import time
+from collections import deque
+import smtplib
+from email.mime.text import MIMEText
+
+class DDoSDetector:
+    def __init__(self, threshold=1000, window=10):
+        self.threshold = threshold  # Packets per second threshold
+        self.window = window  # Time window in seconds
+        self.packet_history = deque(maxlen=window)
+        
+    def get_packet_count(self):
+        """Get current network packet count"""
+        net_io = psutil.net_io_counters()
+        return net_io.packets_recv + net_io.packets_sent
+    
+    def monitor(self):
+        """Monitor network traffic"""
+        print(f"[*] Starting DDoS monitoring (Threshold: {self.threshold} pps)")
+        print("[*] Press Ctrl+C to stop\n")
+        
+        try:
+            while True:
+                packets = self.get_packet_count()
+                self.packet_history.append(packets)
+                
+                if len(self.packet_history) == self.window:
+                    pps = (packets - self.packet_history[0]) / self.window
+                    
+                    if pps > self.threshold:
+                        print(f"[!] ALERT: High traffic detected - {pps:.0f} pps")
+                        print(f"[!] Potential DDoS attack in progress")
+                        # Here you would add your mitigation logic
+                        # Example: Block suspicious IPs, enable rate limiting
+                    
+                    print(f"[+] Current: {pps:.0f} packets/second", end='\r')
+                
+                time.sleep(1)
+                
+        except KeyboardInterrupt:
+            print("\n\n[*] Monitoring stopped")
+
+if __name__ == "__main__":
+    # Adjust threshold based on your normal traffic
+    detector = DDoSDetector(threshold=5000)
+    detector.monitor()</code></pre>
+                        </div>
+
+                        <div class="exercise-i">
+                            <h4>Instructions:</h4>
+                            <ol>
+                                <li>Save the script as <code>ddos_detector.py</code></li>
+                                <li>Install dependencies: <code>pip install psutil</code></li>
+                                <li>Run: <code>python3 ddos_detector.py</code></li>
+                                <li>Monitor your network traffic patterns</li>
+                                <li>Adjust the threshold based on your baseline</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <!-- Conclusion -->
+                    <section class="post-section conclusion">
+                        <h2><i class="fas fa-check-circle"></i> Conclusion</h2>
+                        <p>The Cloudflare DDoS attack demonstrates that even the largest infrastructure providers face
+                            constant threats. However, it also shows that with proper architecture, real-time
+                            monitoring, and automated mitigation, even massive attacks can be successfully handled.</p>
+
+                        <div class="key-takeaways">
+                            <h4>Key Takeaways:</h4>
+                            <ul>
+                                <li>DDoS attacks are evolving with multi-vector approaches</li>
+                                <li>Automation and AI are crucial for real-time response</li>
+                                <li>Global distribution dilutes attack impact</li>
+                                <li>Continuous learning and adaptation are essential</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Resources -->
+                    <section class="post-section resources">
+                        <h2><i class="fas fa-book"></i> Further Resources</h2>
+                        <div class="resource-links">
+                            <a href="https://blogs.cloudflare.com/cloudflare-mitigates-record-breaking-3-47-tbps-ddos-attack/"
+                                class="resource-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Cloudflare Official blogs Post
+                            </a>
+                            <a href="https://github.com/lykos3/network-security-tools" class="resource-link"
+                                target="_blank">
+                                <i class="fab fa-github"></i> My Network Security Tools on GitHub
+                            </a>
+                            <a href="https://owasp.org/www-community/attacks/Denial_of_Service" class="resource-link"
+                                target="_blank">
+                                <i class="fas fa-shield-alt"></i> OWASP DDoS Prevention Guide
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Discussion -->
+                    <section class="post-section discussion">
+                        <h2><i class="fas fa-comments"></i> Questions & Discussion</h2>
+                        <p>Have questions about learning C for security? Want to share your progress?</p>
+                        <div class="discussion-links">
+                            <a href="https://github.com/lykos3/c-security-tools/discussions" class="btn btn-primary"
+                                target="_blank">
+                                <i class="fab fa-github"></i> GitHub Discussions
+                            </a>
+                            <a href="https://www.linkedin.com/in/lykos3-6aa8983a1/" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-linkedin"></i> LinkedIn DM
+                            </a>
+                            <a href="/contact/" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i> Email Me
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Post Footer -->
+                <footer class="post-footer">
+                    <div class="tags">
+                        <h4>Tags:</h4>
+                        <div class="tag-list">
+                            <a href="/blogs/?tag=ddos" class="tag">ddos</a>
+                            <a href="/blogs/?tag=cloudflare" class="tag">cloudflare</a>
+                            <a href="/blogs/?tag=network-security" class="tag">network-security</a>
+                            <a href="/blogs/?tag=threat-analysis" class="tag">threat-analysis</a>
+                            <a href="/blogs/?tag=cybersecurity" class="tag">cybersecurity</a>
+                        </div>
+                    </div>
+
+                    <div class="post-navigation">
+                        <a href="/blogs/" class="nav-prev">
+                            <i class="fas fa-arrow-left"></i> Back to All Posts
+                        </a>
+                        <a href="/blogs/2025/02-c-first-language/" class="nav-next">
+                            Next: Why C Should Be My First Programming Language <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="author-bio">
+                        <img src="/images/profile.png" alt="Ranjit Pandey" class="bio-avatar">
+                        <div class="bio-content">
+                            <h4>About the Author</h4>
+                            <p><strong>Ranjit Pandey</strong> is an aspiring cybersecurity specialist focused on network
+                                security and ethical hacking. He writes weekly technical analyses of significant
+                                security incidents and creates practical security tools.</p>
+                            <div class="bio-links">
+                                <a href="/about/">View Full Bio</a> •
+                                <a href="/projects/">See Projects</a> •
+                                <a href="/contact/">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">pandeyranjit.com.np</a>
+                    <p class="footer-tagline">Cybersecurity Analysis & Research</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Recent Posts</h4>
+                        <ul>
+                            <li><a href="/blogs/2025/01-cloudflare-ddos/">Cloudflare DDoS Analysis</a></li>
+                            <li><a href="#" class="coming-soon">DDoS Detection in Python (Jan)</a></li>
+                            <li><a href="#" class="coming-soon">Security Tools 2025 (Jan)</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://github.com/lykos3" target="_blank"><i class="fab fa-github"></i>
+                                    GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/lykos3-6aa8983a1/" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Visit my LinkedIn profile (opens in new tab)">
+                                    <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+                                </a></li>
+                            <li><a href="https://stackoverflow.com/users/32111612/lykos3" target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Visit my Stack Overflow profile (opens in new tab)">
+                                    <i class="fab fa-stack-overflow" aria-hidden="true"></i> Stack Overflow
+                                </a>
+                            </li>
+                            <li><a href="/contact/"><i class="fas fa-envelope"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="/projects/">Projects</a></li>
+                            <li><a href="/blogs/rss.xml"><i class="fas fa-rss"></i> RSS Feed</a></li>
+                            <li><a href="/privacy-policy/" aria-label="Privacy policy ">Privacy Policy</a></li>
+                            <li><a href="/ehtical-disclosure/" aria-label="Ethical disclosure ">Ethical Disclosure</a>
+                            </li>
+                            <li><a href="/responsible-disclosure/" aria-label="Responsible disclosure ">Responsible
+                                    Disclosure</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Ranjit Pandey. All rights reserved.</p>
+                <p class="disclaimer">
+                    <i class="fas fa-exclamation-triangle"></i> This analysis is for educational purposes only.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    <script src="/js/theme-switcher.js"></script>
+    <script src="/js/blogs-post.js"></script>
+</body>
+
+</html>

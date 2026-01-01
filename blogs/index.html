@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="js-loading">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Blogs | Ranjit Pandey</title>
+    <meta name="description"
+        content="Monthly cybersecurity insights, tutorials, and analysis from an ethical hacker's perspective">
+
+    <!-- SEO & Social -->
+    <meta property="og:title" content="Cybersecurity blogs | Ranjit Pandey">
+    <meta property="og:description" content="Monthly cybersecurity insights and tutorials">
+    <meta property="og:image" content="/images/profile.png">
+    <meta property="og:url" content="https://pandeyranjit.com.np/blogs/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#ffffff" id="themeColorMeta">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/theme-switcher.css">
+    <link rel="stylesheet" href="/css/blogs.css">
+    <link rel="stylesheet" id="cyberThemeCSS" href="/css/cyber-theme.css" disabled>
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico">
+</head>
+
+<body>
+    <!-- Terminal Theme Switcher -->
+    <div id="themeTerminal" class="theme-terminal" aria-hidden="true">
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <span class="terminal-icon"><i class="fas fa-terminal"></i></span>
+                <span>theme_selector.sh</span>
+            </div>
+            <div class="terminal-controls">
+                <button class="terminal-close"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="terminal-body">
+            <div class="terminal-content">
+                <div class="terminal-line">
+                    <span class="prompt">kali@lykos:~$</span> <span class="command">help</span>
+                </div>
+                <div class="terminal-output">
+                    <p>Type "whoami" for cyber theme</p>
+                </div>
+                <div class="terminal-line current-line">
+                    <span class="prompt">kali@lykos:~$</span>
+                    <input type="text" class="terminal-input" id="terminalInput">
+                    <span class="cursor">█</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="themeToggle" class="theme-toggle-btn">
+        <i class="fas fa-terminal"></i>
+        <span class="btn-text">$ whoami</span>
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">
+                    <img src="/images/favicon-32x32.png" alt="Logo" class="logo-icon">
+                    <span class="logo-text">Ranjit Pandey</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li><a href="/projects/" class="nav-link">Projects</a></li>
+                    <li><a href="/blogs/" class="nav-link active">Blogs</a></li>
+                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+                    <li>
+                        <button class="nav-action-btn" id="navThemeToggle">
+                            <i class="fas fa-moon"></i>
+                            <span>Dark Mode</span>
+                        </button>
+                    </li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- blogs Hero -->
+    <main class="main-content">
+        <section class="blogs-hero">
+            <div class="container">
+                <div class="blogs-hero-content">
+                    <h1 class="blogs-title">Cybersecurity <span class="highlight">Insights</span></h1>
+                    <p class="blogs-subtitle">Weekly analysis, tutorials, security and development research from an
+                        ethical
+                        hacker's & Software Developers perspective </p>
+                    <div class="blogs-stats">
+                        <div class="stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label"> Post Weekly</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Technical</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">#</span>
+                            <span class="stat-label">Hands-on</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Post -->
+        <section class="section">
+            <div class="container">
+                <div class="featured-post">
+                    <div class="featured-badge">
+                        <i class="fas fa-star"></i> Featured Analysis
+                    </div>
+                    <div class="featured-grid">
+                        <div class="featured-content">
+                            <span class="post-category threat-analysis">Threat Analysis</span>
+                            <h2 class="featured-title">Cloudflare's Massive DDoS Attack: Technical Breakdown & Lessons
+                            </h2>
+                            <p class="featured-excerpt">In-depth analysis of the 2025 Cloudflare DDoS attack that peaked
+                                at 3.47 Tbps, examining attack vectors, mitigation strategies, and what security
+                                professionals can learn.</p>
+                            <div class="featured-meta">
+                                <span class="date"><i class="far fa-calendar"></i> Dec 31, 2025</span>
+                                <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                                <span class="difficulty intermediate">Intermediate</span>
+                            </div>
+                            <a href="/blogs/2025/01-cloudflare-ddos/" class="btn btn-primary">
+                                <i class="fas fa-book-open"></i> Read Full Analysis
+                            </a>
+                        </div>
+                        <div class="featured-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-server"></i>
+                                <span>DDoS Attack Visualization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- All Posts -->
+        <h2 class="section-title">All Blogs Posts</h2>        
+        <section class="section blogs-listing">
+            <div class="container">
+                <section class="section">
+                    <div class="container">
+                        <div class="blogs-filters" id="blogsCategories">
+                            <button class="filter-btn active" data-category="all">All Posts</button>
+                            <button class="filter-btn" data-category="analysis">Threat Analysis</button>
+                            <button class="filter-btn" data-category="tutorial">Tutorials</button>
+                            <button class="filter-btn" data-category="tools">Tools</button>
+                            <button class="filter-btn" data-category="career">Career</button>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <div class="blogs-grid">
+                    <!-- Post 1 -->
+                    <article class="blogs-card" data-category="analysis">
+                        <div class="card-header">
+                            <span class="post-category threat-analysis">Threat Analysis</span>
+                            <span class="post-date">Dec 31 , 2025</span>
+                        </div>
+                        <h3 class="post-title">Cloudflare DDoS Attack: 3.47 Tbps Breakdown</h3>
+                        <p class="post-excerpt">Technical analysis of the largest DDoS attack mitigated by Cloudflare,
+                            covering attack vectors, mitigation techniques, and security implications.</p>
+                        <div class="post-meta">
+                            <span class="tags">
+                                <span class="tag">ddos</span>
+                                <span class="tag">cloudflare</span>
+                                <span class="tag">network-security</span>
+                            </span>
+                            <a href="/blogs/2025/01-cloudflare-ddos/" class="read-more">
+                                Read Analysis <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+              <!-- Post 2 -->
+                    <article class="blogs-card" data-category="tutorial">
+                        <div class="card-header">
+                            <span class="post-category tutorial">Tutorial</span>
+                            <span class="post-date">Dec 31, 2025</span>
+                        </div>
+                        <h3 class="post-title">Why C Should Be Your First Programming Language</h3>
+                        <p class="post-excerpt">Learn why starting with C gives you fundamental memory management skills
+                            and security understanding that higher-level languages hide.</p>
+                        <div class="post-meta">
+                            <span class="tags">
+                                <span class="tag">c-programming</span>
+                                <span class="tag">beginners</span>
+                                <span class="tag">memory</span>
+                            </span>
+                            <a href="/blogs/2025/02-c-first-language/" class="read-more">
+                                Read Tutorial <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Flutter vs React Native -->
+                    <article class="blogs-card coming-soon" data-category="career">
+                        <div class="card-header">
+                            <span class="post-category career">Career</span>
+                            <span class="post-date">Releases Jan 2026</span>
+                        </div>
+                        <h3 class="post-title">Flutter vs React Native: Which Should You Choose in 2026?</h3>
+                        <p class="post-excerpt">Comparative analysis of cross-platform frameworks from a security,
+                            performance, and career perspective for mobile developers.</p>
+                        <div class="post-meta">
+                            <span class="tags">
+                                <span class="tag">flutter</span>
+                                <span class="tag">react-native</span>
+                                <span class="tag">mobile-dev</span>
+                            </span>
+                            <span class="coming-soon-badge">Coming Soon</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 (Coming Soon) -->
+                    <article class="blogs-card coming-soon" data-category="tutorial">
+                        <div class="card-header">
+                            <span class="post-category tutorial">Tutorial</span>
+                            <span class="post-date">Releases Jan 2026</span>
+                        </div>
+                        <h3 class="post-title">Building a DDoS Detection System in Python</h3>
+                        <p class="post-excerpt">Step-by-step guide to creating a simple DDoS detection system using
+                            Python, Scapy, and machine learning basics.</p>
+                        <div class="post-meta">
+                            <span class="tags">
+                                <span class="tag">python</span>
+                                <span class="tag">scapy</span>
+                                <span class="tag">machine-learning</span>
+                            </span>
+                            <span class="coming-soon-badge">Coming Soon</span>
+                        </div>
+                    </article>
+
+                    <!-- Flutter vs React Native -->
+                    <article class="blogs-card coming-soon" data-category="career">
+                        <div class="card-header">
+                            <span class="post-category career">Career</span>
+                            <span class="post-date">Releases Jan 2026</span>
+                        </div>
+                        <h3 class="post-title">Flutter vs React Native: Which Should You Choose in 2026?</h3>
+                        <p class="post-excerpt">Comparative analysis of cross-platform frameworks from a security,
+                            performance, and career perspective for mobile developers.</p>
+                        <div class="post-meta">
+                            <span class="tags">
+                                <span class="tag">flutter</span>
+                                <span class="tag">react-native</span>
+                                <span class="tag">mobile-dev</span>
+                            </span>
+                            <span class="coming-soon-badge">Coming Soon</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 (Coming Soon) -->
+                    <article class="blogs-card coming-soon" data-category="tools">
+                        <div class="card-header">
+                            <span class="post-category tools">Tools</span>
+                            <span class="post-date">Releases Jan 2026</span>
+                        </div>
+                        <h3 class="post-title">Top 10 Free Security Tools for 2025</h3>
+                        <p class="post-excerpt">Comprehensive review of essential free security tools for penetration
+                            testing, network analysis, and vulnerability assessment.</p>
+                        <div class="post-meta">
+                            <span class="tags">
+                                <span class="tag">tools</span>
+                                <span class="tag">pentesting</span>
+                                <span class="tag">opensource</span>
+                            </span>
+                            <span class="coming-soon-badge">Coming Soon</span>
+                        </div>
+                    </article>
+                    <!-- Writing Secure Code -->
+                    <article class="blogs-card coming-soon" data-category="tutorial">
+                        <div class="card-header">
+                            <span class="post-category tutorial">Tutorial</span>
+                            <span class="post-date">Releases Jan 2026</span>
+                        </div>
+                        <h3 class="post-title">Writing Secure Code: Top 10 Mistakes Developers Make</h3>
+                        <p class="post-excerpt">Common security pitfalls in modern development and practical strategies
+                            to avoid vulnerabilities in your codebase.</p>
+                        <div class="post-meta">
+                            <span class="tags">
+                                <span class="tag">secure-coding</span>
+                                <span class="tag">owasp</span>
+                                <span class="tag">best-practices</span>
+                            </span>
+                            <span class="coming-soon-badge">Coming Soon</span>
+                        </div>
+                    </article>
+
+                    <!-- Browser Storage -->
+                    <article class="blogs-card coming-soon" data-category="tutorial">
+                        <div class="card-header">
+                            <span class="post-category tutorial">Tutorial</span>
+                            <span class="post-date">Releases Jan 2026</span>
+                        </div>
+                        <h3 class="post-title">How Browser Storage Works (Cookies vs LocalStorage)</h3>
+                        <p class="post-excerpt">Comprehensive guide to browser storage mechanisms, security
+                            implications,
+                            and when to use each type for web applications.</p>
+                        <div class="post-meta">
+                            <span class="tags">
+                                <span class="tag">web-storage</span>
+                                <span class="tag">cookies</span>
+                                <span class="tag">javascript</span>
+                            </span>
+                            <span class="coming-soon-badge">Coming Soon</span>
+                        </div>
+                    </article>
+                    <!-- Post 4 (Coming Soon) -->
+                    <article class="blogs-card coming-soon" data-category="career">
+                        <div class="card-header">
+                            <span class="post-category career">Career</span>
+                            <span class="post-date">Releases Jan 2026</span>
+                        </div>
+                        <h3 class="post-title">From Beginner to Security Analyst: 6-Month Roadmap</h3>
+                        <p class="post-excerpt">Practical roadmap with daily/weekly tasks to transition from
+                            cybersecurity beginner to junior security analyst.</p>
+                        <div class="post-meta">
+                            <span class="tags">
+                                <span class="tag">career</span>
+                                <span class="tag">roadmap</span>
+                                <span class="tag">beginners</span>
+                            </span>
+                            <span class="coming-soon-badge">Coming Soon</span>
+                        </div>
+                    </article>
+                </div>
+
+
+                <!-- Newsletter -->
+                <div class="newsletter">
+                    <div class="newsletter-card">
+                        <i class="fas fa-paper-plane newsletter-icon"></i>
+                        <h3>Get Monthly Security Insights</h3>
+                        <p>Subscribe to receive my monthly cybersecurity analysis directly in your inbox. No spam, just
+                            technical content.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="your.email@example.com" required>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i> Subscribe
+                            </button>
+                        </form>
+                        <p class="privacy-note">
+                            <i class="fas fa-shield-alt"></i> We respect your privacy. Unsubscribe anytime.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">pandeyranjit.com.np</a>
+                    <p class="footer-tagline">Cybersecurity blogs & Research</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>blogs Categories</h4>
+                        <ul>
+                            <li><a href="/blogs/?filter=analysis">Threat Analysis</a></li>
+                            <li><a href="/blogs/?filter=tutorial">Tutorials</a></li>
+                            <li><a href="/blogs/?filter=tools">Tools</a></li>
+                            <li><a href="/blogs/?filter=career">Career</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://github.com/lykos3" target="_blank"><i class="fab fa-github"></i>
+                                    GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/lykos3-6aa8983a1/" target="_blank"><i
+                                        class="fab fa-linkedin"></i> LinkedIn</a></li>
+                            <li><a href="/contact/"><i class="fas fa-envelope"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="/projects/">Projects</a></li>
+                            <ul>
+                                <li><a href="/privacy-policy/" aria-label="Privacy policy ">Privacy Policy</a></li>
+                                <li><a href="/ehtical-disclosure/" aria-label="Ethical disclosure ">Ethical
+                                        Disclosure</a>
+                                </li>
+                                <li><a href="/responsible-disclosure/" aria-label="Responsible disclosure ">Responsible
+                                        Disclosure</a></li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Ranjit Pandey. All rights reserved.</p>
+                <p class="disclaimer">
+                    <i class="fas fa-exclamation-triangle"></i> Opinions expressed are solely my own and do not
+                    represent any organization.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    <script src="/js/theme-switcher.js"></script>
+    <script src="/js/blogs-post.js"></script>
+    <script src="/js/blogs-filter.js"></script>
+</body>
+
+</html>

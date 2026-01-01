@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8">
+    <title>Ethical Disclosure | Ranjit Pandey</title>
+    <meta name="description" content="Ethical disclosure and cybersecurity ethics statement.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous">
+
+    <!--CSS file -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" id="cyberThemeCSS" href="/css/cyber-theme.css" disabled>
+    <link rel="stylesheet" href="/css/theme-switcher.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+</head>
+
+<body>
+
+    <!-- Terminal-->
+    <div class="terminal-overlay" id="terminalOverlay"></div>
+    <div id="themeTerminal" class="theme-terminal" aria-hidden="true" role="dialog">
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <i class="fas fa-terminal"></i>
+                <span>theme_selector.sh</span>
+            </div>
+            <div class="terminal-controls">
+                <button class="terminal-minimize" aria-label="Minimize">
+                    <i class="fas fa-window-minimize"></i>
+                </button>
+                <button class="terminal-close" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="terminal-body">
+            <div class="terminal-content">
+
+                <div class="terminal-line">
+                    <span class="prompt">kali@lykos:~$</span>
+                    <span class="command">help</span>
+                </div>
+
+                <div class="terminal-output">
+                    <p>Available commands:</p>
+                    <ul>
+                        <li><code>whoami</code> - Enable cyber theme</li>
+                        <li><code>default</code> - Return to default theme</li>
+                        <li><code>clear</code> - Clear terminal</li>
+                        <li><code>help</code> - Show help</li>
+                    </ul>
+                    <p class="hint">Type <strong>whoami</strong> to unlock hacker mode</p>
+                </div>
+
+                <div class="terminal-line current-line">
+                    <span class="prompt">kali@lykos:~$</span>
+                    <input type="text" id="terminalInput" class="terminal-input" autocomplete="off">
+                    <span class="cursor"></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Terminal Toggle Button -->
+    <button id="themeToggle" class="theme-toggle-btn" aria-label="Open theme terminal">
+        <i class="fas fa-terminal"></i>
+        <span class="btn-text">$ whoami</span>
+    </button>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+
+                <a href="/" class="logo">
+                    <img src="/images/favicon-32x32.png" alt="logo" width="22" height="22">
+                    <span class="logo-text">Ranjit Pandey</span>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li><a href="/projects/" class="nav-link">Projects</a></li>
+                    <li><a href="/blogs/" class="nav-link">Blogs</a></li>
+                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+                    <li>
+                        <button id="navThemeToggle" class="nav-action-btn">
+                            <i class="fas fa-moon"></i>
+                            <span>Dark Mode</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content legal-page">
+        <section class="section legal-section">
+            <div class="container">
+
+                <h1 class="page-title">Ethical Disclosure</h1>
+                <p class="page-subtitle">Cybersecurity Ethics & Responsibility</p>
+
+                <div class="legal-content">
+
+                    <h2>Ethical Commitment</h2>
+                    <p>
+                        I am committed to ethical, legal, and responsible cybersecurity practices.
+                        All skills demonstrated on this website are intended solely for educational,
+                        defensive, and authorized security research.
+                    </p>
+
+                    <h2>Permitted Use</h2>
+                    <ul>
+                        <li>Learning and experimentation in controlled environments</li>
+                        <li>Authorized penetration testing</li>
+                        <li>Security awareness and defensive research</li>
+                    </ul>
+
+                    <h2>Prohibited Use</h2>
+                    <ul>
+                        <li>Unauthorized system access</li>
+                        <li>Malicious exploitation</li>
+                        <li>Illegal hacking or misuse of tools</li>
+                    </ul>
+
+                    <h2>Disclaimer</h2>
+                    <p>
+                        All content is for educational purposes only.
+                        I do not support or encourage illegal activities of any kind.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">pandeyranjit.com.np</a>
+                    <p class="footer-tagline">Cybersecurity Portfolio & Learning Journey</p>
+                </div>
+
+                <div class="footer-links">
+
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about/">About</a></li>
+                            <li><a href="/projects/">Projects</a></li>
+                            <li><a href="/blogs/">Blogs</a></li>
+                            <li><a href="/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://github.com/lykos3" target="_blank"><i class="fab fa-github"></i>
+                                    GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/lykos3-6aa8983a1/" target="_blank"><i
+                                        class="fab fa-linkedin"></i> LinkedIn</a></li>
+                            <li><a href="https://stackoverflow.com/users/32111612/lykos3" target="_blank"><i
+                                        class="fab fa-stack-overflow"></i> Stack Overflow</a></li>
+                            <li><a href="https://hackerrank.com/lykos3" target="_blank"><i
+                                        class="fab fa-hackerrank"></i> HackerRank</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                            <li><a href="/ehtical-disclosure/">Ethical Disclosure</a></li>
+                            <li><a href="/responsible-disclosure/">Responsible Disclosure</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Ranjit Pandey. All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="/js/main.js" defer></script>
+    <script src="/js/theme-switcher.js" defer></script>
+    <script src="/js/matrix-effect.js" defer></script>
+
+</body>
+
+</html>

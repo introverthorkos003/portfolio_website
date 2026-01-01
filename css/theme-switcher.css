@@ -1,0 +1,228 @@
+/* Terminal Theme Switcher */
+.theme-terminal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 90%;
+    max-width: 700px;
+    background: #0a0a0f;
+    border: 2px solid #00ff41;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0, 255, 65, 0.5);
+    z-index: 9999;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    font-family: 'JetBrains Mono', monospace;
+      pointer-events: none;
+}
+
+.theme-terminal.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+     pointer-events: auto;
+}
+
+.terminal-header {
+    background: #121218;
+    padding: 12px 20px;
+    border-bottom: 1px solid #00ff41;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-title {
+    color: #00ff41;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.terminal-icon {
+    color: #00ff41;
+}
+
+.terminal-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.terminal-controls button {
+    background: none;
+    border: none;
+    color: #b0b0b0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.3s;
+    padding: 0 5px;
+}
+
+.terminal-controls button:hover {
+    color: #00ff41;
+}
+
+.terminal-body {
+    padding: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.terminal-content {
+    min-height: 200px;
+}
+
+.terminal-line {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.prompt {
+    color: #00ff41;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.command {
+    color: #ffffff;
+}
+
+.terminal-output {
+    color: #b0b0b0;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.terminal-output p {
+    margin-bottom: 10px;
+}
+
+.terminal-output ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.terminal-output li {
+    margin-bottom: 5px;
+}
+
+.terminal-output code {
+    background: rgba(0, 255, 65, 0.1);
+    color: #00ff41;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.hint {
+    color: #ffaa00;
+    font-style: italic;
+    border-left: 3px solid #ffaa00;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.current-line {
+    display: flex;
+    align-items: center;
+}
+
+.terminal-input {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    flex: 1;
+    outline: none;
+    padding: 5px;
+    caret-color: #00ff41;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.2em;
+    background-color: #00ff41;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Terminal Toggle Button */
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    z-index: 9998;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+}
+
+.theme-toggle-btn:hover {
+    background: #166088;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle-btn i {
+    font-size: 1.1rem;
+}
+
+/* Overlay when terminal is open */
+.terminal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9997;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.terminal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Responsive terminal */
+@media (max-width: 768px) {
+    .theme-terminal {
+        width: 95%;
+        max-height: 80vh;
+    }
+    
+    .terminal-body {
+        max-height: 60vh;
+    }
+    
+    .theme-toggle-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+}

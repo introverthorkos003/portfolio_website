@@ -1,0 +1,396 @@
+/* Cyber Theme - Activated by terminal command */
+html[data-theme="cyber"] {
+    --primary-color: #00ff41;
+    --secondary-color: #0088ff;
+    --accent-color: #ff0055;
+    --text-color: #e0e0e0;
+    --text-light: #b0b0b0;
+    --bg-color: #0a0a0f;
+    --bg-light: #121218;
+    --bg-dark: #050509;
+    --border-color: #222233;
+    --success-color: #00ff41;
+    --warning-color: #ffaa00;
+    --danger-color: #ff0055;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="cyber"] body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+:root[data-theme="cyber"] .header {
+    background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+}
+
+:root[data-theme="cyber"] .logo-text {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+:root[data-theme="cyber"] .nav-link {
+    color: var(--text-color);
+}
+
+:root[data-theme="cyber"] .nav-link:hover,
+:root[data-theme="cyber"] .nav-link.active {
+    color: var(--primary-color);
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.7);
+}
+
+:root[data-theme="cyber"] .nav-link.active::after {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.7);
+}
+
+:root[data-theme="cyber"] .hero {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-color) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="cyber"] .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 136, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+:root[data-theme="cyber"] .highlight {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.7);
+}
+
+:root[data-theme="cyber"] .cyber-text {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+:root[data-theme="cyber"] .cyber-text::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+:root[data-theme="cyber"] .btn-primary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="cyber"] .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+:root[data-theme="cyber"] .btn-primary:hover::before {
+    left: 100%;
+}
+
+:root[data-theme="cyber"] .btn-primary:hover {
+    background-color: rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+:root[data-theme="cyber"] .btn-secondary {
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+:root[data-theme="cyber"] .btn-secondary:hover {
+    background-color: rgba(0, 136, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 136, 255, 0.3);
+}
+
+:root[data-theme="cyber"] .mini-terminal {
+    background: var(--bg-dark);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+}
+
+:root[data-theme="cyber"] .mini-terminal-header {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+:root[data-theme="cyber"] .profile-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+:root[data-theme="cyber"] .profile-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 40px rgba(0, 255, 65, 0.3);
+}
+
+:root[data-theme="cyber"] .tag {
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+:root[data-theme="cyber"] .stat-number {
+    color: var(--primary-color);
+}
+
+:root[data-theme="cyber"] .skill-category {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+}
+
+:root[data-theme="cyber"] .skill-category:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+}
+
+:root[data-theme="cyber"] .skill-category h3 {
+    color: var(--primary-color);
+}
+
+:root[data-theme="cyber"] .project-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+}
+
+:root[data-theme="cyber"] .project-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+}
+
+:root[data-theme="cyber"] .project-icon {
+    color: var(--primary-color);
+}
+
+:root[data-theme="cyber"] .tech-tag {
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+:root[data-theme="cyber"] .cta {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-light) 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+:root[data-theme="cyber"] .cta-card {
+    background: rgba(10, 10, 15, 0.8);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 40px rgba(0, 255, 65, 0.2);
+}
+
+:root[data-theme="cyber"] .footer {
+    background: var(--bg-dark);
+    border-top: 1px solid var(--border-color);
+}
+
+:root[data-theme="cyber"] .cert-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+}
+
+:root[data-theme="cyber"] .cert-card:hover {
+    border-color: var(--primary-color);
+    background: rgba(0, 255, 65, 0.05);
+}
+
+:root[data-theme="cyber"] .sidebar-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+}
+
+/* Matrix rain effect for cyber theme */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+/* Glitch effect for text */
+.glitch {
+    position: relative;
+    animation: glitch 5s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* Terminal cursor */
+:root[data-theme="cyber"] .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.2em;
+    background-color: var(--primary-color);
+    animation: blink 1s infinite;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+/* SPECIFIC FIXES FOR CONTACT & PROJECTS PAGES */
+
+/* Fix ALL cards and boxes */
+:root[data-theme="cyber"] .contact-info-card,
+:root[data-theme="cyber"] .contact-form-card,
+:root[data-theme="cyber"] .guidelines-card,
+:root[data-theme="cyber"] .project-detail,
+:root[data-theme="cyber"] .sidebar-card,
+:root[data-theme="cyber"] .cert-card,
+:root[data-theme="cyber"] .availability,
+:root[data-theme="cyber"] .security-notice,
+:root[data-theme="cyber"] .pgp-key {
+    background-color: var(--bg-light) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* Fix contact method boxes */
+:root[data-theme="cyber"] .contact-method {
+    background-color: transparent !important;
+    border-bottom-color: var(--border-color) !important;
+}
+
+/* Fix guideline boxes */
+:root[data-theme="cyber"] .guideline-box {
+    background-color: var(--bg-light) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+:root[data-theme="cyber"] .guideline-box.security {
+    border-left-color: var(--danger-color) !important;
+}
+
+:root[data-theme="cyber"] .guideline-box.collaboration {
+    border-left-color: var(--primary-color) !important;
+}
+
+:root[data-theme="cyber"] .guideline-box.students {
+    border-left-color: var(--success-color) !important;
+}
+
+/* Fix project elements */
+:root[data-theme="cyber"] .project-header,
+:root[data-theme="cyber"] .project-features,
+:root[data-theme="cyber"] .project-tech-stack,
+:root[data-theme="cyber"] .project-meta,
+:root[data-theme="cyber"] .project-links,
+:root[data-theme="cyber"] .project-screenshot {
+    background-color: transparent !important;
+}
+
+:root[data-theme="cyber"] .project-features {
+    background-color: rgba(0, 255, 65, 0.05) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Fix all text that should be light in dark mode */
+:root[data-theme="cyber"] h1,
+:root[data-theme="cyber"] h2,
+:root[data-theme="cyber"] h3,
+:root[data-theme="cyber"] h4,
+:root[data-theme="cyber"] h5,
+:root[data-theme="cyber"] h6,
+:root[data-theme="cyber"] p,
+:root[data-theme="cyber"] span:not(.prompt):not(.command),
+:root[data-theme="cyber"] li,
+:root[data-theme="cyber"] td,
+:root[data-theme="cyber"] .contact-details h4,
+:root[data-theme="cyber"] .contact-details p,
+:root[data-theme="cyber"] .project-title,
+:root[data-theme="cyber"] .project-subtitle,
+:root[data-theme="cyber"] .project-description,
+:root[data-theme="cyber"] .guideline-box h4,
+:root[data-theme="cyber"] .guideline-box p,
+:root[data-theme="cyber"] .availability h3,
+:root[data-theme="cyber"] .availability p,
+:root[data-theme="cyber"] .security-notice h4,
+:root[data-theme="cyber"] .security-notice p {
+    color: var(--text-color) !important;
+}
+
+/* Fix form elements */
+:root[data-theme="cyber"] .form-control,
+:root[data-theme="cyber"] textarea,
+:root[data-theme="cyber"] select {
+    background-color: var(--bg-color) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+:root[data-theme="cyber"] .form-control::placeholder {
+    color: var(--text-light) !important;
+}
+
+/* Fix buttons in dark mode */
+:root[data-theme="cyber"] .btn-primary {
+    background-color: transparent !important;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+:root[data-theme="cyber"] .btn-secondary {
+    background-color: transparent !important;
+    border-color: var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+:root[data-theme="cyber"] .btn-outline {
+    background-color: transparent !important;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+
+}
+html,
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+/* Fix sections with inline background styles */
+:root[data-theme="cyber"] .section[style*="background"],
+:root[data-theme="cyber"] div[style*="background"]:not(.theme-terminal):not(.terminal-overlay) {
+    background-color: var(--bg-light) !important;
+    background: var(--bg-light) !important;
+}

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>About Ranjit Pandey | pandeyranjit.com.np</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="description"
+        content="Learn about Ranjit Pandey's cybersecurity journey, certifications, skills, and experience as an ethical hacker and security researcher.">
+    <meta name="keywords"
+        content="about, cybersecurity journey, certifications, ethical hacker, security researcher, skills, Ranjit Pandey, lykos">
+    <meta name="author" content="Ranjit Pandey">
+
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="/js/main.js" as="script">
+    <link rel="preload" href="/css/style.css" as="style">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pandeyranjit.com.np/about/">
+    <meta property="og:title" content="About Ranjit Pandey | Cybersecurity Specialist">
+    <meta property="og:description" content="Learn about Ranjit's cybersecurity journey and skills">
+    <meta property="og:image" content="https://pandeyranjit.com.np/images/profile.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pandeyranjit.com.np/about/">
+    <meta property="twitter:title" content="About Ranjit Pandey | Cybersecurity Specialist">
+    <meta property="twitter:description" content="Learn about Ranjit's cybersecurity journey and skills">
+    <meta property="twitter:image" content="https://pandeyranjit.com.np/images/profile.jpg">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/theme-switcher.css">
+    <link rel="stylesheet" id="cyberThemeCSS" href="/css/cyber-theme.css" disabled>
+
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Terminal Theme Switcher -->
+    <div id="themeTerminal" class="theme-terminal" aria-hidden="true" role="dialog" aria-labelledby="terminalTitle">
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <span class="terminal-icon"><i class="fas fa-terminal" aria-hidden="true"></i></span>
+                <span>theme_selector.sh</span>
+            </div>
+            <div class="terminal-controls">
+                <button class="terminal-minimize" aria-label="Minimize terminal">
+                    <i class="fas fa-window-minimize" aria-hidden="true"></i>
+                </button>
+                <button class="terminal-close" aria-label="Close terminal">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div class="terminal-body">
+            <div class="terminal-content">
+                <div class="terminal-line">
+                    <span class="prompt">kali@lykos:~$</span> <span class="command">help</span>
+                </div>
+                <div class="terminal-output">
+                    <p>Available commands:</p>
+                    <ul>
+                        <li><code>whoami</code> - Switch to cybersecurity theme</li>
+                        <li><code>default</code> - Return to normal theme</li>
+                        <li><code>help</code> - Show this help message</li>
+                        <li><code>clear</code> - Clear terminal</li>
+                    </ul>
+                    <p class="hint">Type "whoami" to unlock the hacker mode...</p>
+                </div>
+                <div class="terminal-line current-line">
+                    <span class="prompt">kali@lykos:~$</span>
+                    <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" autofocus
+                        aria-label="Terminal command input">
+                    <span class="cursor">█</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Terminal Toggle Button -->
+    <button id="themeToggle" class="theme-toggle-btn" title="Switch Theme" aria-label="Open theme terminal">
+        <i class="fas fa-terminal" aria-hidden="true"></i>
+        <span class="btn-text">$ whoami</span>
+    </button>
+
+    <!-- Main Website Content -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">
+                    <img src="/images/favicon-32x32.png" alt="pandeyranjit.com.np logo" class="logo-icon" width="22"
+                        height="22" />
+                    <span class="logo-text">Ranjit Pandey</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/about/" class="nav-link ">About</a></li>
+                    <li><a href="/projects/" class="nav-link">Projects</a></li>
+                    <li><a href="/blogs/" class="nav-link">Blogs</a></li>
+                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+
+                    <li>
+                        <button class="nav-action-btn" id="navThemeToggle" aria-label="Toggle theme">
+                            <i class="fas fa-moon" aria-hidden="true"></i>
+                            <span>Dark Mode</span>
+                        </button>
+                    </li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" id="main-content">
+        <section class="section about-hero" role="region" aria-labelledby="about-heading">
+            <div class="container">
+                <h1 class="page-title" id="about-heading">About Me</h1>
+                <p class="page-subtitle">Cybersecurity enthusiast on a journey to master ethical hacking</p>
+            </div>
+        </section>
+        <!-- Hero Section -->
+        <section class="section about-content" role="region" aria-labelledby="journey-heading">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2 id="journey-heading">My Journey</h2>
+                        <p>
+                            The overall interest in the field of technology stemmed from my computer science academic
+                            days. I got acquainted with both software development and the very exciting world of
+                            cybersecurity—especially cryptography and network security. What first piqued my curiosity
+                            was the unseen fight between the defenders and the attackers on the cyber battleground.
+                            Meanwhile, I was enjoying the whole process of software development—transforming notions
+                            into runnable applications through neat logic and coding. Both seemed like playing with
+                            endless puzzles to me, and therefore I wanted to be a master of both rather than choosing
+                            just one.
+                            After that point in time, I let curiosity, experimentation, and hands-on learning be my
+                            guides throughout the journey. I allocate a huge amount of my time to creating tiny software
+                            pieces, writing and perfecting code, and comprehending how systems operate from the inside.
+                            Besides this, I am also involved in probing for security flaws, CTF competitions, and
+                            studies that focus on how software can be smashed and most importantly, how it can be
+                            fortified. Each project and competition reinforces my capability to think like both a
+                            developer and a defender at the same time.
+                        </p>
+                        <br>
+                        <p>
+                            Presently, I am concentrating on practical learning that is close to real-world scenarios in
+                            both areas. In the cybersecurity domain, I am gathering technical know-how in penetration
+                            testing, the hardening of Linux security, and automated security using Python. On the
+                            software side, my endeavors are to improve my programming basics, create large-scale
+                            applications, and write code that is secure, maintainable, and usable. The day-to-day
+                            experience is full of new challenges which are helping me to develop both technically and
+                            psychologically.
+                            Ultimately, I envision myself as a professional who has the whole system—from its weakest to
+                            its strongest link—understood completely; a person who can not only develop software quickly
+                            and easily but also secure it properly. What inspires me most is a simple yet powerful
+                            mission: to deliver trustworthy software and contribute to the protection of the digital
+
+                        </p>
+
+                        <h3>Certifications & Learning Path</h3>
+
+                        <div class="certifications">
+                            <div class="certifications-grid" id="certifications">
+
+                                <!-- Certificate 1 -->
+                                <div class="cert-card incomplete">
+                                    <div class="cert-icon">
+                                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <div class="cert-title">Networking</div>
+                                        <div class="cert-provider"></div>
+                                        <div class="cert-status incomplete">Updating</div>
+                                        <a class="project-link" href="/about/#certifications" target="_blank"
+                                            rel="noopener noreferrer" aria-label="View Certificate (opens in new tab)">
+                                            View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Certificate 2 -->
+                                <div class="cert-card incomplete">
+                                    <div class="cert-icon">
+                                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <div class="cert-title">JavaScript</div>
+                                        <div class="cert-provider"></div>
+                                        <div class="cert-status incomplete">Updating</div>
+                                        <a class="project-link" href="/about/#certifications" target="_blank"
+                                            rel="noopener noreferrer" aria-label="View  Certificate (opens in new tab)">
+                                            View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Certificate 3 -->
+                                <div class="cert-card incomplete">
+                                    <div class="cert-icon">
+                                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <div class="cert-title">React Native</div>
+                                        <div class="cert-provider"></div>
+                                        <div class="cert-status incomplete">Updating</div>
+                                        <a class="project-link" href="/about/#certifications" target="_blank"
+                                            rel="noopener noreferrer" aria-label="View  (opens in new tab)">
+                                            View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Certificate 4 -->
+                                <div class="cert-card incomplete">
+                                    <div class="cert-icon">
+                                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <div class="cert-title">Front-End Developer</div>
+                                        <div class="cert-provider"></div>
+                                        <div class="cert-status incomplete">Updating</div>
+                                        <a class="project-link" href="/about/#certifications" target="_blank"
+                                            rel="noopener noreferrer" aria-label="View (opens in new tab)">
+                                            View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="about-sidebar">
+                        <div class="sidebar-card">
+                            <h3><i class="fas fa-bullseye" aria-hidden="true"></i> Current Focus</h3>
+                            <ul role="list">
+                                <li role="listitem">Network Penetration Testing</li>
+                                <li role="listitem">Linux Security Hardening</li>
+                                <li role="listitem">Python for Security</li>
+                                <li role="listitem">Web Application Security</li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3><i class="fas fa-tools" aria-hidden="true"></i> Daily Tools</h3>
+                            <ul role="list">
+                                <li role="listitem">Kali Linux</li>
+                                <li role="listitem">Visual Studio Code</li>
+                                <li role="listitem">Git & GitHub</li>
+                                <li role="listitem">Wireshark</li>
+                                <li role="listitem">Burp Suite Community</li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3><i class="fas fa-book" aria-hidden="true"></i> Learning Resources</h3>
+                            <ul role="list">
+                                <li role="listitem">TryHackMe & HackTheBox</li>
+                                <li role="listitem">OWASP Web Security Guide</li>
+                                <li role="listitem">Cybersecurity podcasts & blogs</li>
+                                <li role="listitem">Open-source security tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">pandeyranjit.com.np</a>
+                    <p class="footer-tagline">Cybersecurity Portfolio & Learning Journey</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/projects/">Projects</a></li>
+                            <li><a href="/blogs/">blogs</a></li>
+                            <li><a href="/contact/">Contact</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://github.com/lykos3" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Visit my GitHub profile (opens in new tab)">
+                                    <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                                </a></li>
+                            <li><a href="https://www.linkedin.com/in/lykos3-6aa8983a1/" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Visit my LinkedIn profile (opens in new tab)">
+                                    <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+                                </a></li>
+                            <li><a href="https://stackoverflow.com/users/32111612/lykos3" target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Visit my Stack Overflow profile (opens in new tab)">
+                                    <i class="fab fa-stack-overflow" aria-hidden="true"></i> Stack Overflow
+                                </a>
+                            </li>
+                            <li><a href="https://hackerrank.com/lykos3" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Visit my HackerRank profile (opens in new tab)">
+                                    <i class="fab fa-hackerrank" aria-hidden="true"></i> HackerRank
+                                </a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="/privacy-policy/" aria-label="Privacy policy ">Privacy Policy</a></li>
+                            <li><a href="/ehtical-disclosure/" aria-label="Ethical disclosure ">Ethical Disclosure</a>
+                            </li>
+                            <li><a href="/responsible-disclosure/" aria-label="Responsible disclosure ">Responsible
+                                    Disclosure</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="disclaimer">
+                    <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                    &copy; <span id="currentYear"></span> Ranjit Pandey. All rights reserved.
+                </p>
+            </div>
+
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="/js/main.js" defer></script>
+    <script src="/js/theme-switcher.js" defer></script>
+    <script src="/js/matrix-effect.js" defer></script>
+</body>
+
+</html>
