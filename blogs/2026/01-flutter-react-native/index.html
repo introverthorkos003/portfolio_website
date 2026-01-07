@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="js-loading">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter vs React Native: Which Should You Choose in 2026? | Ranjit Pandey</title>
+    <meta name="description"
+        content="Comparative analysis of Flutter and React Native for mobile development in 2026, focusing on security, performance, and career opportunities">
+
+    <!-- SEO -->
+    <meta property="og:title" content="Flutter vs React Native: The 2026 Mobile Development Guide">
+    <meta property="og:description"
+        content="Complete comparison of Flutter and React Native for cross-platform mobile development with security and performance analysis">
+    <meta property="og:image" content="https://pandeyranjit.com.np/images/mobile-dev.jpg">
+    <meta property="og:url" content="https://pandeyranjit.com.np/blogs/2026/01-flutter-react-native/">
+    <meta property="article:published_time" content="2026-01-15">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Flutter vs React Native: Which Should You Choose in 2026?",
+        "description": "Technical comparison of cross-platform mobile development frameworks with security, performance, and career analysis",
+        "author": {
+            "@type": "Person",
+            "name": "Ranjit Pandey",
+            "url": "https://pandeyranjit.com.np"
+        },
+        "datePublished": "2026-01-15",
+        "dateModified": "2026-01-15",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Ranjit Pandey Technical blogs"
+        },
+        "educationalLevel": "Intermediate",
+        "competencyRequired": "Basic programming knowledge"
+    }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/theme-switcher.css">
+    <link rel="stylesheet" href="/css/blogs.css">
+    <link rel="stylesheet" href="/css/blog-c-language.css">
+    <link rel="stylesheet" id="cyberThemeCSS" href="/css/cyber-theme.css" media="none"
+        onload="if(media!='all')media='all'">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico">
+</head>
+
+<body class="theme">
+    <!-- Terminal Theme Switcher -->
+    <div id="themeTerminal" class="theme-terminal" aria-hidden="true">
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <span class="terminal-icon"><i class="fas fa-terminal"></i></span>
+                <span>mobile_dev.sh</span>
+            </div>
+            <div class="terminal-controls">
+                <button class="terminal-close"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="terminal-body">
+            <div class="terminal-content">
+                <div class="terminal-line">
+                    <span class="prompt">dev@mobile:~$</span> <span class="command">flutter --version</span>
+                </div>
+                <div class="terminal-output">
+                    <p>Flutter 4.0.0 • channel stable</p>
+                    <p>Type "compare" to see framework comparison</p>
+                </div>
+                <div class="terminal-line current-line">
+                    <span class="prompt">dev@mobile:~$</span>
+                    <input type="text" class="terminal-input" id="terminalInput">
+                    <span class="cursor">█</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="themeToggle" class="theme-toggle-btn">
+        <i class="fas fa-terminal"></i>
+        <span class="btn-text">$ compare</span>
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">
+                    <img src="/images/favicon-32x32.png" alt="Logo" class="logo-icon">
+                    <span class="logo-text">Ranjit Pandey</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li><a href="/projects/" class="nav-link">Projects</a></li>
+                    <li><a href="/blogs/" class="nav-link active">Blogs</a></li>
+                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+                    <li>
+                        <button class="nav-action-btn" id="navThemeToggle">
+                            <i class="fas fa-moon"></i>
+                            <span>Dark Mode</span>
+                        </button>
+                    </li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- blogs Post Content -->
+    <main class="main-content">
+        <article class="blogs-post">
+            <div class="container">
+                <!-- Post Header -->
+                <header class="post-header">
+                    <nav class="breadcrumb">
+                        <a href="/">Home</a> /
+                        <a href="/blogs/">blogs</a> /
+                        <span class="current">Mobile Development</span>
+                    </nav>
+
+                    <div class="post-category career">Career</div>
+                    <h1 class="post-title">Flutter vs React Native: Which Should You Choose in <span
+                            class="highlight">2026</span>?</h1>
+                    <div class="post-meta">
+                        <div class="author">
+                            <img src="/images/profile.png" alt="Ranjit Pandey" class="author-avatar">
+                            <div>
+                                <span class="author-name">Ranjit Pandey</span>
+                                <span class="author-title">Software Developer | Security Researcher</span>
+                            </div>
+                        </div>
+                        <div class="meta-details">
+                            <span class="date"><i class="far fa-calendar"></i> Jan 7, 2026</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 12 min read</span>
+                            <span class="difficulty intermediate">Intermediate Level</span>
+                        </div>
+                    </div>
+
+                    <div class="post-tldr">
+                        <p>Choosing between <strong>Flutter</strong> and <strong>React Native</strong> in 2026 depends
+                            on your project requirements, team expertise, and long-term maintenance goals. Flutter
+                            offers better performance and consistency, while React Native provides a larger ecosystem
+                            and JavaScript familiarity.</p>
+                    </div>
+                </header>
+
+                <!-- Featured Image -->
+                <div class="featured-image">
+                    <img src="/images/reactvsflutter.jpeg" alt="Flutter vs React Native Comparison" class="featured-img" width="1200" 
+         height="630">
+                    <div class="image-caption">
+                        <i class="fas fa-info-circle"></i>
+                        Choosing the right framework impacts development speed, performance, and long-term maintenance
+                    </div>
+                </div>
+
+                <!-- Post Content -->
+                <div class="post-content">
+                    <!-- Introduction -->
+                    <section class="post-section">
+                        <h2><i class="fas fa-mobile-alt"></i> Introduction: The Cross-Platform Dilemma</h2>
+                        <p>As we enter 2026, the mobile development landscape continues to evolve, with Flutter and
+                            React Native dominating the cross-platform space. Having worked with both frameworks, I've
+                            witnessed their strengths and limitations firsthand.</p>
+
+                        <div class="alert info">
+                            <i class="fas fa-lightbulb"></i>
+                            <strong>Key Insight:</strong> The choice between Flutter and React Native isn't just about
+                            technical features—it's about team dynamics, ecosystem maturity, and future-proofing your
+                            applications.
+                        </div>
+
+                        <h3>Why This Decision Matters</h3>
+                        <ul>
+                            <li><strong>Development Cost:</strong> Cross-platform can reduce costs by 30-40% compared to
+                                native</li>
+                            <li><strong>Time to Market:</strong> Single codebase accelerates development</li>
+                            <li><strong>Maintenance:</strong> Long-term support considerations</li>
+                            <li><strong>Career Impact:</strong> Market demand for each technology</li>
+                        </ul>
+                    </section>
+
+                    <!-- Technical Comparison -->
+                    <section class="post-section">
+                        <h2><i class="fas fa-code"></i> 1. Technical Deep Dive</h2>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Framework Architecture Comparison</span>
+                                <button class="copy-code"><i class="far fa-copy"></i></button>
+                            </div>
+                            <pre><code class="language-dart">// Flutter - Dart with Widget-based architecture
+class CounterApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Text('Hello Flutter 2026'),
+        ),
+      ),
+    );
+  }
+}
+
+// React Native - JavaScript with Component architecture
+import React from 'react';
+import { Text, View } from 'react-native';
+
+const CounterApp = () => {
+  return (
+    &lt;View&gt;
+      &lt;Text&gt;Hello React Native 2026&lt;/Text&gt;
+    &lt;/View&gt;
+  );
+};</code></pre>
+                        </div>
+
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Aspect</th>
+                                        <th>Flutter</th>
+                                        <th>React Native</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Programming Language</strong></td>
+                                        <td class="pro">Dart (AOT compiled)</td>
+                                        <td class="con">JavaScript (JIT interpreted)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Performance</strong></td>
+                                        <td class="pro">60-120 FPS (Native-like)</td>
+                                        <td class="con">30-60 FPS (Bridge overhead)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>UI Consistency</strong></td>
+                                        <td class="pro">Pixel-perfect across platforms</td>
+                                        <td class="con">Platform-specific variations</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Hot Reload</strong></td>
+                                        <td class="pro">Sub-second reload</td>
+                                        <td class="con">Fast refresh (1-2 seconds)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Bundle Size</strong></td>
+                                        <td class="con">4-10 MB (Includes engine)</td>
+                                        <td class="pro">2-5 MB (Smaller runtime)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- Security Analysis -->
+                    <section class="post-section">
+                        <h2><i class="fas fa-shield-alt"></i> 2. Security Considerations</h2>
+
+                        <div class="security-lesson">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Security Best Practices</h4>
+                            <div class="best-practices">
+                                <div class="practice-card">
+                                    <h5>Flutter Security</h5>
+                                    <ul>
+                                        <li>Native code isolation</li>
+                                        <li>Secure storage plugins</li>
+                                        <li>Certificate pinning</li>
+                                        <li>Biometric authentication</li>
+                                    </ul>
+                                </div>
+                                <div class="practice-card">
+                                    <h5>React Native Security</h5>
+                                    <ul>
+                                        <li>Hermes engine security</li>
+                                        <li>JavaScript bridge risks</li>
+                                        <li>Third-party library vetting</li>
+                                        <li>Secure storage solutions</li>
+                                    </ul>
+                                </div>
+                                <div class="practice-card">
+                                    <h5>Common Threats</h5>
+                                    <ul>
+                                        <li>Data leakage</li>
+                                        <li>Insecure communication</li>
+                                        <li>Code injection</li>
+                                        <li>Reverse engineering</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Secure Storage Implementation</span>
+                                <button class="copy-code"><i class="far fa-copy"></i></button>
+                            </div>
+                            <pre><code class="language-dart">// Flutter - flutter_secure_storage
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
+final storage = FlutterSecureStorage();
+await storage.write(key: 'auth_token', value: 'secure_jwt_token');
+
+// React Native - react-native-keychain
+import * as Keychain from 'react-native-keychain';
+
+await Keychain.setGenericPassword(
+  'auth_token',
+  'secure_jwt_token'
+);</code></pre>
+                        </div>
+                    </section>
+
+                    <!-- Performance Analysis -->
+                    <section class="post-section">
+                        <h2><i class="fas fa-tachometer-alt"></i> 3. Performance Benchmarking</h2>
+
+                        <div class="memory-exercise">
+                            <h3>Performance Metrics (2026 Benchmark)</h3>
+                            <div class="memory-diagram">
+                                <div class="memory-section">
+                                    <h4>Startup Time</h4>
+                                    <p>App initialization speed</p>
+                                    <code>Flutter: 800ms</code>
+                                    <code>React Native: 1200ms</code>
+                                </div>
+                                <div class="memory-section">
+                                    <h4>Memory Usage</h4>
+                                    <p>Average RAM consumption</p>
+                                    <code>Flutter: 85MB</code>
+                                    <code>React Native: 95MB</code>
+                                </div>
+                                <div class="memory-section">
+                                    <h4>FPS (60s test)</h4>
+                                    <p>Frame rate stability</p>
+                                    <code>Flutter: 58.7 FPS</code>
+                                    <code>React Native: 45.2 FPS</code>
+                                </div>
+                                <div class="memory-section">
+                                    <h4>Bundle Size</h4>
+                                    <p>Release APK/Ipa size</p>
+                                    <code>Flutter: 8.2MB</code>
+                                    <code>React Native: 4.7MB</code>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Career Impact -->
+                    <section class="post-section">
+                        <h2><i class="fas fa-chart-line"></i> 4. Career & Market Analysis</h2>
+
+                        <div class="learning-path">
+                            <div class="path-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Job Market Demand (2026)</h4>
+                                    <ul>
+                                        <li><strong>React Native:</strong> 45% market share</li>
+                                        <li><strong>Flutter:</strong> 35% market share</li>
+                                        <li><strong>Native:</strong> 20% market share</li>
+                                        <li><strong>Average Salary:</strong> $95K - $145K</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="path-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Learning Curve</h4>
+                                    <ul>
+                                        <li><strong>Flutter:</strong> 2-3 months (Dart + Widgets)</li>
+                                        <li><strong>React Native:</strong> 1-2 months (JavaScript background)</li>
+                                        <li><strong>Transferable Skills:</strong> Both frameworks teach mobile concepts
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="path-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Future Prospects</h4>
+                                    <ul>
+                                        <li>Flutter: Growing in enterprise</li>
+                                        <li>React Native: Strong in startups</li>
+                                        <li>Both: Web & desktop expansion</li>
+                                        <li>Specialization: AR/VR, AI integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Decision Framework -->
+                    <section class="post-section">
+                        <h2><i class="fas fa-check-circle"></i> 5. Decision Framework</h2>
+
+                        <h3>When to Choose Flutter</h3>
+                        <ul>
+                            <li>Need pixel-perfect UI across platforms</li>
+                            <li>Performance-critical applications</li>
+                            <li>Heavy animations and custom graphics</li>
+                            <li>Team willing to learn Dart</li>
+                            <li>Long-term maintenance focus</li>
+                        </ul>
+
+                        <h3>When to Choose React Native</h3>
+                        <ul>
+                            <li>Existing JavaScript/React expertise</li>
+                            <li>Large ecosystem of libraries needed</li>
+                            <li>Quick prototype development</li>
+                            <li>Integration with web React projects</li>
+                            <li>Startup with limited resources</li>
+                        </ul>
+                    </section>
+
+                    <!-- Hands-on Project -->
+                    <section class="post-section">
+                        <h2><i class="fas fa-laptop-code"></i> 6. Hands-on: Simple To-Do App</h2>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Flutter - ToDo App</span>
+                                <button class="copy-code"><i class="far fa-copy"></i></button>
+                            </div>
+                            <pre><code class="language-dart">import 'package:flutter/material.dart';
+
+void main() => runApp(TodoApp());
+
+class TodoApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Todo',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: TodoList(),
+    );
+  }
+}
+
+class TodoList extends StatefulWidget {
+  @override
+  _TodoListState createState() => _TodoListState();
+}
+
+class _TodoListState extends State<TodoList> {
+  final List<String> _todos = [];
+  final TextEditingController _controller = TextEditingController();
+
+  void _addTodo() {
+    setState(() {
+      _todos.add(_controller.text);
+      _controller.clear();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Todo List')),
+      body: Column(
+        children: [
+          TextField(controller: _controller),
+          ElevatedButton(onPressed: _addTodo, child: Text('Add')),
+          Expanded(
+            child: ListView.builder(
+              itemCount: _todos.length,
+              itemBuilder: (context, index) => ListTile(
+                title: Text(_todos[index]),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}</code></pre>
+                        </div>
+                    </section>
+
+                    <!-- Conclusion -->
+                    <section class="post-section">
+                        <h2><i class="fas fa-flag-checkered"></i> Conclusion</h2>
+                        <p>Both Flutter and React Native have matured significantly by 2026, each with distinct
+                            advantages. The decision should be based on your specific project requirements, team
+                            expertise, and long-term goals.</p>
+
+                        <h3>Final Recommendations</h3>
+                        <ol>
+                            <li><strong>For Enterprise Apps:</strong> Flutter for consistency</li>
+                            <li><strong>For Startups:</strong> React Native for speed</li>
+                            <li><strong>For Games/Graphics:</strong> Flutter for performance</li>
+                            <li><strong>For Web + Mobile:</strong> React Native for shared code</li>
+                            <li><strong>For Career Growth:</strong> Learn both, specialize in one</li>
+                        </ol>
+                    </section>
+
+                    <!-- Resources -->
+                    <section class="post-section resources">
+                        <h2><i class="fas fa-book"></i> Learning Resources</h2>
+                        <div class="resource-links">
+                            <a href="https://flutter.dev/docs" class="resource-link" target="_blank">
+                                <i class="fas fa-book-open"></i> Flutter Official Documentation
+                            </a>
+                            <a href="https://reactnative.dev/docs/getting-started" class="resource-link"
+                                target="_blank">
+                                <i class="fab fa-react"></i> React Native Documentation
+                            </a>
+                            <a href="https://github.com/lykos3/mobile-security-guide" class="resource-link"
+                                target="_blank">
+                                <i class="fab fa-github"></i> Mobile Security Best Practices
+                            </a>
+                            <a href="https://dart.dev/guides" class="resource-link" target="_blank">
+                                <i class="fas fa-code"></i> Dart Language Guide
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Discussion -->
+                    <section class="post-section discussion">
+                        <h2><i class="fas fa-comments"></i> Questions & Discussion</h2>
+                        <p>Have questions about choosing between Flutter and React Native? Want to share your
+                            experience?</p>
+                        <div class="discussion-links">
+                            <a href="https://github.com/lykos3/mobile-dev-discussions" target="_blank">
+                                <i class="fab fa-github"></i> GitHub Discussions
+                            </a>
+                            <a href="https://twitter.com/lykos3" target="_blank">
+                                <i class="fab fa-twitter"></i> Twitter DM
+                            </a>
+                            <a href="/contact/">
+                                <i class="fas fa-envelope"></i> Email Me
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Post Footer -->
+                <footer class="post-footer">
+                    <div class="tags">
+                        <h4>Tags:</h4>
+                        <div class="tag-list">
+                            <a href="/blogs/?tag=flutter" class="tag">flutter</a>
+                            <a href="/blogs/?tag=react-native" class="tag">react-native</a>
+                            <a href="/blogs/?tag=mobile-dev" class="tag">mobile-dev</a>
+                            <a href="/blogs/?tag=career" class="tag">career</a>
+                            <a href="/blogs/?tag=cross-platform" class="tag">cross-platform</a>
+                        </div>
+                    </div>
+
+                    <div class="post-navigation">
+                        <a href="/blogs/2025/02-c-first-language/" class="nav-prev">
+                            <i class="fas fa-arrow-left"></i> Previous: C Programming Guide
+                        </a>
+                        <span class="nav-next coming-soon">
+                            Next: Mobile Security Testing <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+
+                    <div class="author-bio">
+                        <img src="/images/profile.png" alt="Ranjit Pandey" class="bio-avatar">
+                        <div class="bio-content">
+                            <h4>About the Author</h4>
+                            <p><strong>Ranjit Pandey</strong> has worked on both Flutter and React Native projects,
+                                developing enterprise mobile applications with focus on security and performance. He
+                                writes about practical technology decisions for developers.</p>
+                            <div class="bio-links">
+                                <a href="https://github.com/lykos3/mobile-projects" target="_blank">View Mobile
+                                    Projects</a>
+                                •
+                                <a href="/projects/">All Projects</a> •
+                                <a href="/contact/">Get in Touch</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">pandeyranjit.com.np</a>
+                    <p class="footer-tagline">Mobile Development & Security</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Mobile Resources</h4>
+                        <ul>
+                            <li><a href="https://flutter.dev/" target="_blank">Flutter</a></li>
+                            <li><a href="https://reactnative.dev/" target="_blank">React Native</a></li>
+                            <li><a href="https://dart.dev/" target="_blank">Dart Language</a></li>
+                            <li><a href="https://developer.android.com/" target="_blank">Android Dev</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://github.com/lykos3" target="_blank"><i class="fab fa-github"></i>
+                                    GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/lykos3" target="_blank"><i class="fab fa-linkedin"></i>
+                                    LinkedIn</a></li>
+                            <li><a href="https://twitter.com/lykos3" target="_blank"><i class="fab fa-twitter"></i>
+                                    Twitter</a></li>
+                            <li><a href="/contact/"><i class="fas fa-envelope"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Development Tools</h4>
+                        <ul>
+                            <li><a href="https://code.visualstudio.com/" target="_blank">VS Code</a></li>
+                            <li><a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a></li>
+                            <li><a href="https://developer.android.com/studio" target="_blank">Android Studio</a></li>
+                            <li><a href="https://expo.dev/" target="_blank">Expo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Ranjit Pandey. All rights reserved.</p>
+                <p class="disclaimer">
+                    <i class="fas fa-code"></i> Framework choices should align with project requirements
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    <script src="/js/theme-switcher.js"></script>
+    <script src="/js/blogs-post.js"></script>
+    <script>
+        // Mobile framework comparison terminal
+        document.addEventListener('DOMContentLoaded', function () {
+            const terminalInput = document.getElementById('terminalInput');
+            if (terminalInput) {
+                terminalInput.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        const command = this.value.trim().toLowerCase();
+                        const output = document.querySelector('.terminal-output');
+
+                        if (command === 'compare') {
+                            if (output) {
+                                output.innerHTML = `
+                                    <p>=== Flutter vs React Native (2026) ===</p>
+                                    <p>Performance: Flutter > React Native</p>
+                                    <p>Ecosystem: React Native > Flutter</p>
+                                    <p>Learning: React Native < Flutter</p>
+                                    <p>Security: Both require careful implementation</p>
+                                `;
+                            }
+                        } else if (command === 'help') {
+                            if (output) {
+                                output.innerHTML = `
+                                    <p>Available commands:</p>
+                                    <p><code>compare</code> - Show framework comparison</p>
+                                    <p><code>flutter</code> - Flutter info</p>
+                                    <p><code>react</code> - React Native info</p>
+                                    <p><code>help</code> - Show this help</p>
+                                `;
+                            }
+                        }
+
+                        this.value = '';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

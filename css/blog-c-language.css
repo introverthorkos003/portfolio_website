@@ -146,7 +146,6 @@
 /* ===== FEATURED IMAGE ===== */
 .blogs-post .featured-image {
     position: relative;
-    height: 300px;
     margin: 2.5rem 0;
     background: linear-gradient(135deg,
             rgba(74, 111, 165, 0.05) 0%,
@@ -158,8 +157,8 @@
 
 .blogs-post .featured-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;  
+    height: auto;
+    object-fit: contain;  
     display: block;
 }
 
